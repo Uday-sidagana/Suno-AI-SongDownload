@@ -1,4 +1,4 @@
-from flask import Flask, Request, render_template, redirect, url_for
+from flask import Flask, Request, render_template, redirect, url_for, request
 
 
 
@@ -11,6 +11,13 @@ def hello():
 
 @app.route('/homepage', methods=['GET', 'POST'])
 def homepage():
+
+    prompt= request.form.get('prompt')
+    style = request.form.get('style')
+    title = request.form.get('title')
+    negative_tags = request.form.get('negative_tags')
+
+
     return render_template('homepage.html')
 
 if __name__=='__main__':
