@@ -8,12 +8,12 @@
 <body>
     <h2>Genarte Your Song</h2>
     <p>Give a prompt</p>
-    <form action="{{url_for('homepage')}}" method="POST">
+    <form id="basicForm" action="{{url_for('homepage')}}" method="POST">
         <label>Prompt: <input type="text" name="prompt"></label>
         <input type="submit" value="Generate">
     </form>
     
-    <button onclick="showForm()">Custom</button>
+    <button onclick="toggleForm()">Custom</button>
 
     <div id="myForm" style="display: none;">
         <form action="{{url_for('homepage')}}" method="POST" >
@@ -28,10 +28,19 @@
 
 
     <script>
-        function showForm() {
-            document.getElementById("myForm").style.display = "block";
+        function toggleForm() {
+            var basicForm = document.getElementById("basicForm");
+            var customForm = document.getElementById("myForm");
+            
+            // Toggle visibility of both forms
+            if (customForm.style.display === "none") {
+                customForm.style.display = "block";  // Show custom form
+                basicForm.style.display = "none";    // Hide basic form
+            } else {
+                customForm.style.display = "none";  // Hide custom form
+                basicForm.style.display = "block";  // Show basic form
+            }
         }
     </script>
-
 </body>
 </html>
