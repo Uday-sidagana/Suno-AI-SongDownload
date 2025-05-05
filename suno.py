@@ -8,5 +8,10 @@ app = Flask(__name__, template_folder="Template")
 def hello():
     return "Hello"
 
+
+@app.route('/homepage')
+def homepage():
+    pass
+
 if __name__=='__main__':
     app.run(host='0.0.0.0', port=5020, debug=True)
