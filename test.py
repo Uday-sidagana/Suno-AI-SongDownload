@@ -69,7 +69,6 @@ def get_task_result(task_id):
         raise Exception(f"API error: {result.get('msg') or 'Unknown error'}")
 
 
-
 #---------------
 
 def download_music_file(music_url, filename):
