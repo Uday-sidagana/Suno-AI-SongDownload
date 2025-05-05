@@ -9,9 +9,9 @@ def hello():
     return "Hello"
 
 
-@app.route('/homepage')
+@app.route('/homepage', methods=['GET', 'POST'])
 def homepage():
-    pass
+    return render_template('homepage.html')
 
 if __name__=='__main__':
     app.run(host='0.0.0.0', port=5020, debug=True)

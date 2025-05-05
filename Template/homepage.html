@@ -6,7 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>Genarte Your Song</h2>
+    <p>Give a prompt</p>
+    <form action="{{url_for('homepage')}}" method="POST">
+        <label>Prompt: <input type="text" name="prompt"></label>
+        <input type="submit" value="Generate">
+    </form>
     
-   
 </body>
 </html>
