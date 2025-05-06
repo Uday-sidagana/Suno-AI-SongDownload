@@ -92,7 +92,7 @@ def homepage():
                 "taskId": task_id
             }
 
-            response = requests.post("https://apibox.erweima.ai/api/v1/get-task-result", headers=headers, json=payload)
+            response = requests.post(f'https://api.suno.ai/api/generation/{task_id}', headers=headers, json=payload)
             result = response.json()
 
             if result.get("code") == 200:
